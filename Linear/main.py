@@ -7,7 +7,7 @@ import matplotlib.pyplot as pyplot
 import pickle
 from matplotlib import style
 
-"""Storing Data with Pandas"""
+"""Storing Data with Pandas, change your dir"""
 data = pd.read_csv("C:/Users/SMXaS/PycharmProjects/TensorMachine/Linear/student-mat.csv", sep=";")
 data = data[["G1", "G2", "G3", "studytime", "failures", "absences"]]
 predict = "G3"
@@ -43,7 +43,7 @@ for epochs in range(30):
     with open("studentmodel.pickle", "wb") as file:
         pickle.dump(linear, file) '''
 
-"""Open Pickle"""
+"""Open Pickle, Change your dir"""
 pickle_open = open("C:/Users/SMXaS/PycharmProjects/TensorMachine/Linear/studentmodel.pickle", "rb")
 
 """Load Pickle"""
