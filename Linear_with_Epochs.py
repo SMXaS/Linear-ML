@@ -3,9 +3,7 @@ import pandas as pd
 import numpy as np
 import sklearn
 from sklearn import linear_model
-import matplotlib.pyplot as pyplot
 import pickle
-from matplotlib import style
 
 """Storing Data with Pandas"""
 data = pd.read_csv("student-mat.csv", sep=";")
@@ -15,12 +13,7 @@ predict = "G3"
 """Storing Data with Numpy"""
 X = np.array(data.drop([predict], 1))
 Y = np.array(data[predict])
-
-"""Saving X and Y, because it is used in 53 - 57 lines"""
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.1)
-
-''' Commented out when the best accuracy was found (95%), 
-    if you want to keep going, uncomment and run the training.
 
 """Setting up Best Score"""
 best_score = 0
@@ -41,7 +34,7 @@ for epochs in range(30):
 
     """"Writing a Pickle file"""
     with open("studentmodel.pickle", "wb") as file:
-        pickle.dump(linear, file) '''
+        pickle.dump(linear, file)
 
 """Open Pickle"""
 pickle_open = open("studentmodel.pickle", "rb")
